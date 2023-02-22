@@ -27,7 +27,7 @@ namespace WeatherApp
             }
             else
             {
-                var gor = _weather.Weathers.Where(s => s.CityName.Contains(textBox1.Text)).ToList();
+                var gor = _weather.Weathers.Where(s => s.CityName.ToLower().Contains(textBox1.Text.ToLower())).ToList();
                 WeatherDataGrid.DataSource = gor;
             }
         }
